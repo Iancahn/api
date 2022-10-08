@@ -25,10 +25,13 @@ const getFullUserName = (userInfo) => {
     return `${first} ${last}`;
 }
 
-// const getProfileImage = (userInfo) => {
-//     const { picture: { large } } = userImage;
-//     return `${large}`;
-// }
+const makeCap = (userInfo) => {
+    if (userInfo.gender === "male") {
+        return "Male";
+    } else {
+        return "Female";
+    }
+}
 
 function Api() {
     const [randomUserData, setRandomUserData] = useState('');
@@ -52,7 +55,7 @@ function Api() {
                                 <h4>Name and Surname:</h4>
                                 <p>{getFullUserName(userInfo)}</p>
                                 <h4>Gender:</h4>
-                                <p>{userInfo.gender}</p>
+                                <p>{makeCap(userInfo)}</p>
                                 <h4>Email Adress:</h4>
                                 <p>{userInfo.email}</p>
                                 <h4>Phone Number:</h4>
@@ -61,7 +64,7 @@ function Api() {
                             <div class="column">
                                 {/* <p>Name and Surname: {getFullUserName(userInfo)}</p> */}
                                 <h4>Profile Picture:</h4>
-                                <img className="full__img" src={userInfo.picture.large} />
+                                <img className="full__img" src={userInfo.picture.large} alt="The random person" />
                                 <h4>Want to meet more people?</h4>
                                 <p>Click our fancy button below:</p>
                                 <button className="button" onClick={fetchRandomData}>Fetch Some Data</button>
