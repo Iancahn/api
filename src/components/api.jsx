@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
-// fetch('https://jsonplaceholder.typicode.com/posts')
-//     .then(response => response.json())
-//     .then(data => console.log(data));
-
-
+// import components
+import Dots from '../components/dots';
 
 const fetchRandomData = () => {
     return axios.get('https://randomuser.me/api/')
@@ -51,7 +47,6 @@ function Api() {
                     <div>
                         <div class="row">
                             <div class="column">
-                                {/* <p>Name and Surname: </p> */}
                                 <h4>Name and Surname:</h4>
                                 <p>{getFullUserName(userInfo)}</p>
                                 <h4>Gender:</h4>
@@ -62,7 +57,6 @@ function Api() {
                                 <p>{userInfo.phone}</p>
                             </div>
                             <div class="column">
-                                {/* <p>Name and Surname: {getFullUserName(userInfo)}</p> */}
                                 <h4>Profile Picture:</h4>
                                 <img className="full__img" src={userInfo.picture.large} alt="The random person" />
                                 <h4>Want to meet more people?</h4>
@@ -70,8 +64,7 @@ function Api() {
                                 <button className="button" onClick={fetchRandomData}>Fetch Some Data</button>
                             </div>
                         </div>
-
-
+                        <Dots />
                     </div>
                 )
             })}

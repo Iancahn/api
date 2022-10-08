@@ -51,10 +51,37 @@ main {
   color: #99FB08;
   cursor: pointer;
   border-radius: 8px;
+  transition: 0.3s;
+  border: 1px solid black;
+  font-size: 1.05rem;
 }
 
 .button:hover {
   background-color: #99FB08;
   color: black;
-  border: #99FB08;
+  border: #99FB08 1px solid;
+}
+
+.row__dot1 {
+  margin-top: 50px;
+}
+
+.row__dot2 {
+  margin-bottom: 100px;
+}
+
+.dot {
+  height: 10px;
+  margin-right: 10px;
+  width: 10px;
+  background-color: #2521FC;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.Footer {
+  background-color: #2521FC;
+  color: white;
+  padding: 0.1em;
+  border-radius: 8px;
 }
