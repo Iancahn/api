@@ -22,9 +22,13 @@ const fetchRandomData = () => {
 
 const getFullUserName = (userInfo) => {
     const { name: { first, last } } = userInfo;
-    return `${first}, and ${last}`;
+    return `${first} ${last}`;
 }
 
+// const getProfileImage = (userInfo) => {
+//     const { picture: { large } } = userImage;
+//     return `${large}`;
+// }
 
 function Api() {
     const [randomUserData, setRandomUserData] = useState('');
@@ -39,10 +43,34 @@ function Api() {
 
     return (
         <div>
-            <button onClick={fetchRandomData}>Fetch Some Data</button>
-            <p>{randomUserData}</p>
             {userInfos.map((userInfo, idx) => {
-                <p>{getFullUserName(userInfo)}</p>
+                return (
+                    <div>
+                        <div class="row">
+                            <div class="column">
+                                {/* <p>Name and Surname: </p> */}
+                                <h4>Name and Surname:</h4>
+                                <p>{getFullUserName(userInfo)}</p>
+                                <h4>Gender:</h4>
+                                <p>{userInfo.gender}</p>
+                                <h4>Email Adress:</h4>
+                                <p>{userInfo.email}</p>
+                                <h4>Phone Number:</h4>
+                                <p>{userInfo.phone}</p>
+                            </div>
+                            <div class="column">
+                                {/* <p>Name and Surname: {getFullUserName(userInfo)}</p> */}
+                                <h4>Profile Picture:</h4>
+                                <img className="full__img" src={userInfo.picture.large} />
+                                <h4>Want to meet more people?</h4>
+                                <p>Click our fancy button below:</p>
+                                <button className="button" onClick={fetchRandomData}>Fetch Some Data</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                )
             })}
         </div>
     )

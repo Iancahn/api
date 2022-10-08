@@ -6,8 +6,12 @@ import Api from './components/api';
 function App() {
   return (
     <div className="App">
-      <h1>Hello API world</h1>
-      <Api />
+      <header>
+        <h1>Meet new people across the globe</h1>
+      </header>
+      <main>
+        <Api />
+      </main>
     </div>
   );
 }
