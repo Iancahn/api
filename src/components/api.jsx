@@ -29,6 +29,8 @@ const makeCap = (userInfo) => {
     }
 }
 
+
+
 function Api() {
     const [randomUserData, setRandomUserData] = useState('');
     const [userInfos, setUserInfos] = useState([]);
