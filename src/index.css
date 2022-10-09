@@ -62,12 +62,18 @@ main {
   border: #99FB08 1px solid;
 }
 
+.row__dot {
+  margin-left: 250px;
+}
+
 .row__dot1 {
   margin-top: 50px;
+  margin-left: 250px;
 }
 
 .row__dot2 {
   margin-bottom: 100px;
+  margin-left: 250px;
 }
 
 .dot {
