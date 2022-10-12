@@ -114,9 +114,6 @@ function Dots() {
                 <span class="dot"></span>
                 <span class="dot"></span>
             </div>
-            <div className="Footer">
-                <p>Built by Ian Cahn</p>
-            </div>
         </div >
     )
 }
